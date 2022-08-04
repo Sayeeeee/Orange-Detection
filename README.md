@@ -3,6 +3,7 @@
 ## AIM
 To create a classification system which detects the quality of a Orange and specifies whether the given Orange is rotten or not.
 OBJECTIVES
+
 • The main objective of the project is to do quality check of a given Orange within a short period of time.
 
 • Using appropriate datasets for recognizing and interpreting data using machine learning.
@@ -100,7 +101,11 @@ SDK.
 • In our model we have used JetPack version 4.6 which is the latest production release and supports all Jetson modules.
 ## Jetson Nano 2GB
 
-[nano_img01](https://user-images.githubusercontent.com/87264450/182773300-6de4f4c1-58c2-44bd-a696-a698d9046f51.jpg)
+
+![nano_img01](https://user-images.githubusercontent.com/87264450/182775056-ee9bc0bc-aeff-4660-a584-7272cafe4ffd.jpg)
+
+
+
 
  
 ## Installation
@@ -108,54 +113,101 @@ SDK.
 ## Initial Configuration
 
 sudo apt-get remove --purge libreoffice*
+
 sudo apt-get remove --purge thunderbird*
+
 Create Swap
-udo fallocate -l 10.0G /swapfile1
+
+sudo fallocate -l 10.0G /swapfile1
+
 sudo chmod 600 /swapfile1
+
 sudo mkswap /swapfile1
+
 sudo vim /etc/fstab
+
 #make entry in fstab file
+
 /swapfile1 swap swap defaults 0 0
+
 Cuda env in bashrc
+
 vim ~/.bashrc
+
 ###add this lines
+
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+
 export LD_LIBRARY_PATh=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+
 Update &amp; Upgrade
+
 sudo apt-get update
+
 sudo apt-get upgrade
+
 Install some required Packages
+
 sudo apt install curl
+
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
 sudo python3 get-pip.py
+
 sudo apt-get install libopenblas-base libopenmpi-dev
+
 Install Torch
+
 curl -LO https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl
+
 mv p57jwntv436lfrd78inwl7iml6p13fzh.whl torch-1.8.0-cp36-cp36m-linux_aarch64.whl
+
 sudo pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl
+
 #Check Torch, output should be &quot;True&quot;
+
 sudo python3 -c &quot;import torch; print(torch.cuda.is_available())&quot;
+
 Install Torchvision
+
 git clone --branch v0.9.1 https://github.com/pytorch/vision torchvision
+
 cd torchvision/
+
 sudo python3 setup.py install
+
 Clone Yolov5
+
 git clone https://github.com/ultralytics/yolov5.git
+
 cd yolov5/
+
 sudo pip3 install numpy==1.19.4
+
 #comment torch,PyYAML and torchvision in requirement.txt
+
 sudo pip3 install --ignore-installed PyYAML&gt;=5.3.1
 
 sudo pip3 install -r requirements.txt
+
 Download weights and Test Yolov5 Installation on USB webcam
+
 sudo python3 detect.py
+
 sudo python3 detect.py --weights yolov5s.pt --source 0
+
 Orange Dataset Training
+
 We used Google Colab And Roboflow
+
 train your model on colab and download the weights and pass them into yolov5 folder.
+
 Running  Model
+
 source &#39;0&#39; for webcam
+
 !python detect.py --weights best.pt --img 416 --conf 0.1 --source 0
 
 ## Demo
@@ -164,6 +216,7 @@ source &#39;0&#39; for webcam
 
 
 https://user-images.githubusercontent.com/87264450/182774758-39095d45-6081-4862-bf43-9e3be8366356.mp4
+
 
 
 
@@ -218,7 +271,6 @@ segregation of Oranges from rotten ones in an efficient way.
 
 https://www.webmd.com/food-recipes/health-benefits-oranges
 
-https://www.choicesmagazine.org/choices-magazine/theme-articles/trends-and-challenges-in-fruit-and-tree-nut-sectors/trends-and-issues-facing-the-us-citrus-
-industry
+https://www.choicesmagazine.org/choices-magazine/theme-articles/trends-and-challenges-in-fruit-and-tree-nut-sectors/trends-and-issues-facing-the-us-citrus-industry
 
 https://www.slurrp.com/article/why-is-nagpur-called-the-orange-city-of-india-1655983210467
