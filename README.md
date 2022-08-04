@@ -98,7 +98,8 @@ detection, segmentation, and speech processing. All in an easy-to-use platform t
 SDK.
 
 • In our model we have used JetPack version 4.6 which is the latest production release and supports all Jetson modules.
-Jetson Nano 2GB
+## Jetson Nano 2GB
+
 [nano_img01](https://user-images.githubusercontent.com/87264450/182773300-6de4f4c1-58c2-44bd-a696-a698d9046f51.jpg)
 
  
@@ -153,13 +154,17 @@ sudo python3 detect.py --weights yolov5s.pt --source 0
 Orange Dataset Training
 We used Google Colab And Roboflow
 train your model on colab and download the weights and pass them into yolov5 folder.
-Running Helmet Detection Model
+Running  Model
 source &#39;0&#39; for webcam
 !python detect.py --weights best.pt --img 416 --conf 0.1 --source 0
+
 ## Demo
 
 
-https://user-images.githubusercontent.com/87264450/182773699-d35d68d5-8af8-425c-ba24-b76ae2fe5d50.mp4
+
+
+https://user-images.githubusercontent.com/87264450/182774758-39095d45-6081-4862-bf43-9e3be8366356.mp4
+
 
 
 
