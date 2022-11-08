@@ -83,7 +83,7 @@ A. Front-end development
 B. Back-end development
 
 3] Testing, analyzing and improvising the model. An application using python IDLE and its machine learning libraries will be using machine learning to identify whether a given
-Banana is rotten or not.
+Orange is rotten or not.
 
 4] use datasets to interpret the object and suggest whether a given Orange on the camera’s viewfinder is rotten or not.
 Jetson Nano Compatibility
